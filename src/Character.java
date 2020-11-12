@@ -6,14 +6,14 @@ public abstract class Character {
     
     int Health,Damage,level,speed,XP,YP;
     
-    Animation Ani,i,rr,rl,j,f;
+    Animation Ani,i,rr,rl,j,f,Hit;
     
-    Boolean ground,jump,canmove;
+    Boolean ground,jump,canmove,canmove2;
     
     Rectangle Hitbox;
 
     
-    public Character(int h, int d, int l, int s, int x, int y,Animation ii,Animation irr,Animation irl,Animation ij,Animation ifa,Boolean g,Boolean jm,Boolean cm){
+    public Character(int h, int d, int l, int s, int x, int y,Animation ii,Animation irr,Animation irl,Animation ij,Animation ifa, Animation hit,Boolean g,Boolean jm,Boolean cm,Boolean cm2){
         Health = h;
         Damage = d;
         level = l;
@@ -25,10 +25,12 @@ public abstract class Character {
         rl=irl;
         j=ij;
         f=ifa;
+        Hit=hit;
         Ani=ii;
         ground = g;
         jump = jm;
         canmove=cm;
+        canmove2=cm2;
         
         Hitbox = new Rectangle(XP,YP,Ani.getWidth(),Ani.getHeight());
     }
